@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/page/ChatPage.dart';
 import 'package:flutter_application_1/page/HomePage.dart';
+import 'package:flutter_application_1/page/InsurePage.dart';
 import 'package:flutter_application_1/page/SettingsPage.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,8 +17,8 @@ class Navigation extends State<HomeScreen> {
   // NavigationBar 아이템과 페이지 타이틀을 쌍으로 매핑합니다.
   final List<Map<String, dynamic>> _navigationItems = [
     {'icon': Icons.home, 'label': '홈', 'page': const HomePage()},
-    {'icon': Icons.contacts, 'label': '보험', 'page': const ChatPage()},
-    {'icon': Icons.chat, 'label': '채팅', 'Chat': const ChatPage()},
+    {'icon': Icons.contacts, 'label': '보험', 'page': const InsurePage()},
+    {'icon': Icons.chat, 'label': '채팅', 'page': const ChatPage()},
     {'icon': Icons.build, 'label': '설정', 'page': const SettingsPage()},
     // 추가 페이지는 여기에 매핑 정보를 추가합니다.
   ];
@@ -35,9 +36,6 @@ class Navigation extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_navigationItems[_selectedIndex]['label']),
-      ),
       body: _getCurrentPage(),
       bottomNavigationBar: BottomNavigationBar(
         items: _navigationItems
