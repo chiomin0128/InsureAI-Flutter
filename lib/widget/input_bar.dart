@@ -7,8 +7,8 @@ class InputBar extends StatelessWidget {
   const InputBar({
     required this.controller,
     required this.onSend,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class InputBar extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             onPressed: onSend,
           ),
         ],
